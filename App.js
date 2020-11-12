@@ -1,12 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, TextInput, View } from 'react-native';
+import logo from './Image/Logo.jpg'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ImageBackground source={logo} style={styles.image}>
+        <TextInput
+         style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+         placeholder="Paste Link"
+         value={value}
+        />
+        <Button
+         title="Submit"
+         color="#841584"
+         accessibilityLabel="Learn more about this purple button"
+        />
+        <StatusBar style="auto" />
+      </ImageBackground>
+      
     </View>
   );
 }
@@ -18,4 +31,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+    image: {
+      flex: 1,
+      resizeMode: "cover",
+      justifyContent: "center"
+    }
+
+  
 });
